@@ -12,7 +12,8 @@ The goal of `grademe` is to grade marks.
 ## Installation
 
 ``` r
-devtools::install_github("grademe")
+devtools::install_github("thiyangt/grademe")
+library(grademe)
 ```
 
 ## Grading scheme - MSc/ PG
