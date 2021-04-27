@@ -1,0 +1,74 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%",
+  always_allow_html= TRUE
+)
+```
+
+# grademe
+
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of `grademe` is to grade marks.
+
+## Installation
+
+``` r
+devtools::install_github("grademe")
+
+```
+
+
+## Grading scheme - MSc/ PG
+
+```{r, comment=NA, echo=FALSE, eval=FALSE}
+library(magrittr)
+library(kableExtra)
+LB <- c(85, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 00)
+UB <- c(100, 84, 69, 64, 59, 54, 49, 44, 39, 34, 29, 24)
+Grade <- c("A+", "A", "A-", "B+", "B", "B-",
+           "C+", "C", "C-", "D+", "D", "F")
+GPA <- c(4.00, 4.00, 3.70, 3.30, 3.00, 2.70, 2.30,
+         2.00, 1.70, 1.30, 1.00, 0.00)
+df <- data.frame(LB, UB, Grade, GPA)
+kbl(df) 
+
+
+```
+
+
+Range of Marks  |  Letter Grade | GPA
+----|------|-----
+85 - 100  | A+ | 4.00
+70 - 84  | A | 4.00
+65 - 69  | A- | 3.70
+60 - 64  | B+ | 3.30
+55 - 59  | B | 3.00
+50 - 54  | B- | 2.70
+45 - 49  | C+ | 2.30
+40 - 44  | C | 2.00
+35 - 39  | C- | 1.70
+30 - 34  | D+ | 1.30
+25 - 29  | D | 1.00
+00 - 24  | F | 0.00
+
+# Usage
+
+```{r}
+library(grademe)
+marks <- 1:100
+grade <- pg_grademe(marks)
+data.frame(grade=grade)
+```
+
