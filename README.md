@@ -142,3 +142,13 @@ data.frame(grade=grade)
 #> 99     A+
 #> 100    A+
 ```
+
+``` r
+pg_grademe(c("1", "100", "ab", "deferred"))
+#> Warning in pg_grademe(c("1", "100", "ab", "deferred")): NAs introduced by
+#> coercion
+
+#> Warning in pg_grademe(c("1", "100", "ab", "deferred")): NAs introduced by
+#> coercion
+#> [1] "F"        "A+"       "ab"       "deferred"
+```

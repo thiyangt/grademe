@@ -72,3 +72,7 @@ grade <- pg_grademe(marks)
 data.frame(grade=grade)
 ```
 
+```{r}
+pg_grademe(c("1", "100", "ab", "deferred"))
+```
+
