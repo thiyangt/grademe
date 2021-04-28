@@ -76,3 +76,15 @@ data.frame(grade=grade)
 pg_grademe(c("1", "100", "ab", "deferred"))
 ```
 
+## Read marksheet and grade
+
+```{r}
+library(here)
+marks <- readmarks(here("exampledata",
+                       "example1.xlsx"), 1, "R4C1:R7C4")
+marks
+marks$Final <- marks$Mid + marks$End
+marks$grade <- pg_grademe(marks$Final)
+marks
+```
+

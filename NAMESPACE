@@ -2,4 +2,4 @@
 
 export(pg_grademe)
 export(readmarks)
-importFrom(xlsx,read.xlsx)
+importFrom(readxl,read_excel)

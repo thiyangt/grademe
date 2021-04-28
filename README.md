@@ -152,3 +152,28 @@ pg_grademe(c("1", "100", "ab", "deferred"))
 #> coercion
 #> [1] "F"        "A+"       "ab"       "deferred"
 ```
+
+## Read marksheet and grade
+
+``` r
+library(here)
+#> here() starts at /Users/thiyangashaminitalagala/packages/grademe
+marks <- readmarks(here("exampledata",
+                       "example1.xlsx"), 1, "R4C1:R7C4")
+marks
+#> # A tibble: 3 x 4
+#>   `Index No` Name    Mid   End
+#>        <dbl> <chr> <dbl> <dbl>
+#> 1          1 xxx      10    40
+#> 2          2 yyy      20    50
+#> 3          3 zzz      30    60
+marks$Final <- marks$Mid + marks$End
+marks$grade <- pg_grademe(marks$Final)
+marks
+#> # A tibble: 3 x 6
+#>   `Index No` Name    Mid   End Final grade
+#>        <dbl> <chr> <dbl> <dbl> <dbl> <chr>
+#> 1          1 xxx      10    40    50 B-   
+#> 2          2 yyy      20    50    70 A    
+#> 3          3 zzz      30    60    90 A+
+```

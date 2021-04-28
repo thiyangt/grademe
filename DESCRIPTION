@@ -14,7 +14,8 @@ Depends:
     R (>= 4.0.2)
 Encoding: UTF-8
 Imports:
-      xlsx
+      readxl,
+      here
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1

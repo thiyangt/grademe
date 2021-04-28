@@ -4,16 +4,14 @@
 \alias{readmarks}
 \title{R function to read marks table in the excel sheet}
 \usage{
-readmarks(path, sheetIndex, colrange, rwrange)
+readmarks(path, sheet, range)
 }
 \arguments{
 \item{path}{path to xlsx file}
 
-\item{sheetIndex}{number representing the sheet index in the workbook}
+\item{sheet}{Sheet to read. Either a string (the name of a sheet), or an integer (the position of the sheet}
 
-\item{colrange}{column range}
-
-\item{rwrange}{raw range}
+\item{range}{column range string for example "R6C1:R29C2". This reads raws from R6 to R29 and columns from C1 to C2.}
 }
 \value{
 table of marks information
