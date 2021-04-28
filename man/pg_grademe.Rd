@@ -7,7 +7,7 @@
 pg_grademe(marks)
 }
 \arguments{
-\item{vector}{of marks}
+\item{marks}{of marks}
 }
 \value{
 vector containing grades

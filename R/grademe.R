@@ -1,6 +1,6 @@
 #' R function to grade marks
 #'
-#' @param vector of marks
+#' @param marks of marks
 #' @return vector containing grades
 #' @export
 pg_grademe <- function(marks){
